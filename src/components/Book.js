@@ -9,10 +9,10 @@ const Book = (book) => {
     dispatch(removeBook(id));
   };
   return (
-    <div className="bookStore">
-      <div className="details-clm">
-        <p>{author}</p>
-        <p>{title}</p>
+    <div className="bookContent">
+      <div className="content">
+        <h1>{title}</h1>
+        <h2>{author}</h2>
         <button type="button" onClick={() => handleDelete(id)}>
           Remove
         </button>

@@ -9,18 +9,17 @@ const empty = (value) => value === undefined
   || (typeof value === 'string' && value.trim().length === 0);
 
 const Books = () => {
-  const postBook = useSelector((state) => state.booksReducer);
-
+  const addBook = useSelector((state) => state.booksReducer);
   return (
-    <div className="book-clm">
-      {!empty(postBook)
-        && postBook.map((post) => (
+    <div className="books-container">
+      {!empty(addBook)
+        && addBook.map((book) => (
           <Book
-            post={post}
-            key={post.id}
-            id={post.id}
-            title={post.title}
-            author={post.author}
+            book={book}
+            key={book.id}
+            id={book.id}
+            title={book.title}
+            author={book.author}
           />
         ))}
       <Form />
