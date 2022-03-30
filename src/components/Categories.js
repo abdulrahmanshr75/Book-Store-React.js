@@ -4,9 +4,13 @@ import Message from '../redux/Categories/categoriesReducer';
 
 const dispatch = useDispatch();
 
+const checkStatus = () => {
+  dispatch(Message);
+};
+
 const Categories = () => (
   <div className="categories-container">
-    <button onClick={dispatch(Message)}>Check Status</button>
+    <button onClick={checkStatus()}>Check Status</button>
   </div>
 );
 
