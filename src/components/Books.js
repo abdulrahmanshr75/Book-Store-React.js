@@ -1,28 +1,26 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Book from './Book';
-import Form from './Form';
-
-const empty = (value) => value === undefined
-  || value === null
-  || (typeof value === 'object' && Object.keys(value).length === 0)
-  || (typeof value === 'string' && value.trim().length === 0);
+import { fetchBooks } from '../redux/Books/booksReducer';
 
 const Books = () => {
-  const addBook = useSelector((state) => state.booksReducer);
-  return (
-    <div className="books-container">
-      {!empty(addBook)
-        && addBook.map((book) => (
-          <Book
-            book={book}
-            key={book.id}
-            id={book.id}
-            title={book.title}
-            author={book.author}
-          />
+  const books = useSelector((state) => state.books);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchBooks());
+  });
+  if (books.length) {
+    return (
+      <ul id="book-list">
+        {booksList.map((book) => (
+          <Book book={book} key={book.id} />
         ))}
-      <Form />
+      </ul>
+    );
+  }
+  return (
+    <div>
+      <h3>No Books yet</h3>
     </div>
   );
 };
