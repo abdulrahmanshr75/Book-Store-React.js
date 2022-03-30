@@ -7,9 +7,11 @@ const Categories = () => {
   const handleClick = () => {
     dispatch(categoriesMessage());
   };
+  return (
     <div className="categories-container">
       <button onClick={() => handleClick()}>Check Status</button>
-    </div>;
+    </div>
+  );
 };
 
 export default Categories;
