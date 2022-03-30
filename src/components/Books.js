@@ -12,7 +12,7 @@ const Books = () => {
   if (books.length) {
     return (
       <ul id="book-list">
-        {booksList.map((book) => (
+        {books.map((book) => (
           <Book book={book} key={book.id} />
         ))}
       </ul>

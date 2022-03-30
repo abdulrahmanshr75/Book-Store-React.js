@@ -9,6 +9,7 @@ const Categories = () => {
   };
   return (
     <div className="categories-container">
+      <h1>Under construction</h1>
       <button onClick={() => handleClick()}>Check Status</button>
     </div>
   );

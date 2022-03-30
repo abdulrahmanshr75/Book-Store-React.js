@@ -1,11 +1,11 @@
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4 } from 'uuid';
 
-const ADD_BOOK = "ADD_BOOK";
-const REMOVE_BOOK = "REMOVE_BOOK";
-const BOOK_REMOVED = "BOOK_REMOVED";
-const BOOK_ADDED = "BOOK_ADDED";
-const FETCH_BOOKS = "FETCH_BOOKS";
-const BOOKS_FETCHED = "BOOKS_FETCHED";
+const ADD_BOOK = 'ADD_BOOK';
+const REMOVE_BOOK = 'REMOVE_BOOK';
+const BOOK_REMOVED = 'BOOK_REMOVED';
+const BOOK_ADDED = 'BOOK_ADDED';
+const FETCH_BOOKS = 'FETCH_BOOKS';
+const BOOKS_FETCHED = 'BOOKS_FETCHED';
 
 const bookAdded = (book) => ({
   type: BOOK_ADDED,
@@ -19,16 +19,15 @@ export const addBook = (data) => (dispatch) => {
     item_id: uuidv4(),
     title: data.title,
     author: data.author,
-    category: data.category || "",
+    category: data.category || '',
   };
 
-  const url =
-    "https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/WLbwnHBRxzSeJhGdUqVi/books";
+  const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/WLbwnHBRxzSeJhGdUqVi/books';
 
   const settings = {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify(book),
   };
@@ -45,13 +44,12 @@ const bookRemoved = (id) => ({
   },
 });
 export const removeBook = (id) => (dispatch) => {
-  let url =
-    "https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/WLbwnHBRxzSeJhGdUqVi/books/";
+  let url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/WLbwnHBRxzSeJhGdUqVi/books/';
   url += id;
   const settings = {
-    method: "DELETE",
+    method: 'DELETE',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({
       book_id: id,
@@ -71,17 +69,15 @@ const booksFetched = (books) => ({
 });
 
 export const fetchBooks = () => (dispatch) => {
-  const url =
-    "https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/WLbwnHBRxzSeJhGdUqVi/books";
-
+  const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/WLbwnHBRxzSeJhGdUqVi/books';
   fetch(url)
     .then((res) => res.json())
     .then((books) => {
-      const booksList = Object.keys(books).map((bookID) => ({
+      const list = Object.keys(books).map((bookID) => ({
         id: bookID,
         ...books[bookID][0],
       }));
-      dispatch(booksFetched(booksList));
+      dispatch(booksFetched(list));
     });
 };
 
