@@ -1,14 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/Books/booksReducer';
+import React from "react";
+import PropTypes from "prop-types";
+import { useDispatch } from "react-redux";
+import { removeBook } from "../redux/Books/booksReducer";
 
 const Book = ({ book }) => {
   const dispatch = useDispatch();
   return (
     <li className="bookContent">
-      {book.title}
-      {' by '}
+      <h3 className="title">{book.title}</h3>
       {book.author}
       <button
         type="button"
