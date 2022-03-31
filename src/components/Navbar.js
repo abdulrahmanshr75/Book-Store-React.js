@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
+import user from "../images/user.png";
 const links = [
   {
     id: 1,
@@ -26,7 +26,9 @@ const Navbar = () => (
           </li>
         ))}
       </ul>
+      <img className="user" src={user} />
     </nav>
+    <div className="line" />
   </header>
 );
 
