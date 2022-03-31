@@ -8,7 +8,7 @@ const Books = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchBooks());
-  });
+  }, []);
   if (books.length) {
     return (
       <ul id="book-list">
