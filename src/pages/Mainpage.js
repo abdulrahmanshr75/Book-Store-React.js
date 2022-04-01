@@ -1,14 +1,14 @@
-import React from "react";
-import Form from "../components/Form";
-import Books from "../components/Books";
+import React from 'react';
+import Form from '../components/Form';
+import Books from '../components/Books';
 
 const Mainpage = () => {
   const categories = [
-    "Action",
-    "Economy",
-    "Novel",
-    "Politics",
-    "Science Fiction",
+    'Action',
+    'Economy',
+    'Novel',
+    'Politics',
+    'Science Fiction',
   ];
   return (
     <div className="main-container">

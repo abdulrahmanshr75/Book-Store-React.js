@@ -9,8 +9,10 @@ const Categories = () => {
   };
   return (
     <div className="categories-container">
-      <h1>Under construction</h1>
-      <button onClick={() => handleClick()}>Check Status</button>
+      <h1 className="title">Under construction</h1>
+      <button className="submit" onClick={() => handleClick()}>
+        Check Status
+      </button>
     </div>
   );
 };

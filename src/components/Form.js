@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import PropTypes from "prop-types";
-import { addBook } from "../redux/Books/booksReducer";
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
+import { addBook } from '../redux/Books/booksReducer';
 
 const Form = ({ categories }) => {
-  const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
-  const [category, setCategory] = useState(categories[0] || "");
+  const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
+  const [category, setCategory] = useState(categories[0] || '');
 
   const updateTitle = (e) => {
     e.preventDefault();
@@ -31,8 +31,8 @@ const Form = ({ categories }) => {
         onSubmit={(e) => {
           e.preventDefault();
           dispatch(addBook({ title, author, category }));
-          setAuthor("");
-          setTitle("");
+          setAuthor('');
+          setTitle('');
         }}
       >
         <input

@@ -19,7 +19,7 @@ const Books = () => {
     );
   }
   return (
-    <div className='no-container'>
+    <div className="no-container">
       <h2 className="no-books">No Books yet</h2>
     </div>
   );
