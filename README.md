@@ -2,6 +2,8 @@
 
 This project was developed to add, remove and show your booklist !.
 
+![screenshot](images/screenshot.png)
+
 ## Built with
 
 - React
