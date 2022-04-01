@@ -19,7 +19,7 @@ This project was developed to add, remove and show your booklist !.
 
 start by cloning this repository by running:
 
-git clone https://github.com/abdulrahmanshr75/Book-Store-React.js.git
+git clone https://github.com/abdulrahmanshr75/Book-store.git
 
 cd into the folder
 
