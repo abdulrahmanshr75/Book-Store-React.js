@@ -13,7 +13,7 @@ This project was developed to add, remove and show your booklist !.
 
 ## Live Website
 
--[Book store](https://bookstore1223.herokuapp.com/)
+[Book store](https://bookstore1223.herokuapp.com/)
 
 ## Usage
 
