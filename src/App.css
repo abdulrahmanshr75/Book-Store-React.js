@@ -8,6 +8,7 @@ header {
   width: 100%;
   height: auto;
   z-index: 1;
+  
 }
 
 body {
@@ -33,7 +34,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-left: 6.25rem;
+  margin-left: 8.25rem;
 }
 
 .bookContent {
@@ -244,7 +245,7 @@ select {
 
 .user {
   position: relative;
-  left: 750px;
+  left: 580px;
   width: 40px;
   cursor: pointer;
 }
