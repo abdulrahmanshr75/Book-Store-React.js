@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import { addBook } from '../redux/Books/booksReducer';
 
-const Form = () => {
+const Form = ({ categories }) => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
+  const [category, setCategory] = useState(categories[0] || '');
 
   const updateTitle = (e) => {
     e.preventDefault();
@@ -16,15 +18,19 @@ const Form = () => {
     setAuthor(e.target.value);
   };
 
+  const updateCategory = (e) => {
+    setCategory(e.target.value);
+  };
+
   const dispatch = useDispatch();
 
   return (
     <div className="form-container">
-      <h2>add a new book</h2>
+      <h2 className="new">ADD A NEW BOOK</h2>
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          dispatch(addBook({ title, author }));
+          dispatch(addBook({ title, author, category }));
           setAuthor('');
           setTitle('');
         }}
@@ -47,10 +53,27 @@ const Form = () => {
           pattern=".*\S+.*"
           required
         />
-        <button type="submit">Add Book</button>
+        <select
+          name="category"
+          value={category}
+          onChange={updateCategory}
+          className="categories"
+        >
+          {categories.map((cat) => (
+            <option value={cat} key={cat}>
+              {cat}
+            </option>
+          ))}
+        </select>
+        <button className="submit" type="submit">
+          Add Book
+        </button>
       </form>
     </div>
   );
+};
+Form.propTypes = {
+  categories: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Form;
