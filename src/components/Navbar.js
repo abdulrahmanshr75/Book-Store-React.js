@@ -1,17 +1,17 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import user from "../images/user.png";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import user from '../images/user.png';
 
 const links = [
   {
     id: 1,
-    path: "/",
-    text: "BOOKS",
+    path: '/',
+    text: 'BOOKS',
   },
   {
     id: 2,
-    path: "/categories",
-    text: "CATEGORIES",
+    path: '/categories',
+    text: 'CATEGORIES',
   },
 ];
 const Navbar = () => (
